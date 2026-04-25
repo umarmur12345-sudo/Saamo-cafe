@@ -685,6 +685,107 @@
 
       .hero::after { inset: 12px; }
     }
+
+    /* ── Reviews ──────────────────────────────────────────────── */
+    #reviews { background: var(--darker); }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+    }
+
+    .review-card {
+      background: var(--dark-mid);
+      border: 1px solid rgba(201,169,110,0.12);
+      padding: 2rem 1.8rem 1.8rem;
+      position: relative;
+      transition: border-color .3s, transform .3s;
+    }
+    .review-card:hover {
+      border-color: var(--gold-dim);
+      transform: translateY(-4px);
+    }
+
+    .review-card::before {
+      content: '\201C';
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem;
+      line-height: 1;
+      color: var(--gold);
+      opacity: .18;
+      position: absolute;
+      top: .6rem; left: 1.2rem;
+    }
+
+    .review-stars {
+      display: flex;
+      gap: .25rem;
+      margin-bottom: 1rem;
+    }
+    .review-stars span {
+      color: var(--gold);
+      font-size: 0.85rem;
+    }
+
+    .review-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--cream-dark);
+      line-height: 1.65;
+      margin-bottom: 1.4rem;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .review-author-line {
+      width: 22px; height: 1px;
+      background: var(--gold);
+      opacity: .5;
+      flex-shrink: 0;
+    }
+    .review-author-name {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .reviews-cta-wrap {
+      text-align: center;
+    }
+    .reviews-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: .65rem;
+      padding: .9rem 2.4rem;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      transition: background .3s, color .3s;
+    }
+    .reviews-cta:hover {
+      background: var(--gold);
+      color: var(--darker);
+    }
+    .reviews-cta-icon { font-size: .8rem; }
+
+    @media (max-width: 900px) {
+      .reviews-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 620px) {
+      .reviews-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -698,6 +799,7 @@
       <li><a href="#about"   onclick="closeNav()">About</a></li>
       <li><a href="#menu"    onclick="closeNav()">Menu</a></li>
       <li><a href="#gallery" onclick="closeNav()">Gallery</a></li>
+      <li><a href="#reviews" onclick="closeNav()">Reviews</a></li>
       <li><a href="#contact" onclick="closeNav()">Contact</a></li>
     </ul>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
@@ -1000,6 +1102,87 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════
+       REVIEWS
+  ═══════════════════════════════════════════════════════ -->
+  <section id="reviews">
+    <div class="sec-header">
+      <p class="sec-label">What Our Guests Say</p>
+      <h2 class="sec-title">Guest Reviews</h2>
+      <div class="sec-rule"><div class="sec-rule-dot"></div></div>
+      <p class="sec-desc">Real words from the people who matter most — our guests.</p>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="review-quote">"The khachapuri here is absolutely incredible. Best Georgian food in Brooklyn!"</p>
+        <div class="review-author">
+          <div class="review-author-line"></div>
+          <span class="review-author-name">Maria K.</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="review-quote">"Khinkali are perfectly made, just like back home. This place is a hidden gem."</p>
+        <div class="review-author">
+          <div class="review-author-line"></div>
+          <span class="review-author-name">David T.</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="review-quote">"Warm atmosphere, generous portions and authentic flavors. We will be back!"</p>
+        <div class="review-author">
+          <div class="review-author-line"></div>
+          <span class="review-author-name">Anna R.</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="review-quote">"The wine selection is outstanding. Saperavi paired perfectly with the lamb mtsvadi."</p>
+        <div class="review-author">
+          <div class="review-author-line"></div>
+          <span class="review-author-name">George M.</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="review-quote">"Best Georgian restaurant in New York. The Acharuli khachapuri is a must try!"</p>
+        <div class="review-author">
+          <div class="review-author-line"></div>
+          <span class="review-author-name">Sofia L.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-cta-wrap">
+      <a
+        href="https://www.google.com/maps/search/Saamo+Cafe+2568+86th+St+Brooklyn+NY+11214"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="reviews-cta"
+      >
+        <span class="reviews-cta-icon">★</span>
+        See All Reviews on Google
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
        CONTACT
   ═══════════════════════════════════════════════════════ -->
   <section id="contact">
@@ -1061,6 +1244,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#menu">Menu</a></li>
       <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#reviews">Reviews</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <p class="footer-copy">&copy; 2025 Saamo Cafe. All rights reserved. · 2568 86th St, Brooklyn, NY 11214</p>
