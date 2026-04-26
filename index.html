@@ -61,13 +61,25 @@
     }
 
     .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      text-decoration: none;
+    }
+    .nav-logo-img {
+      height: 46px;
+      width: auto;
+      display: block;
+    }
+    .nav-logo-text {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.55rem;
+      font-size: 1.4rem;
       font-weight: 600;
       letter-spacing: 0.06em;
       color: var(--maroon);
+      line-height: 1;
     }
-    .nav-logo span { color: var(--text); }
+    .nav-logo-text span { color: var(--text); }
 
     .nav-links {
       display: flex;
@@ -784,6 +796,19 @@
     @media (max-width: 620px) {
       .reviews-grid { grid-template-columns: 1fr; }
     }
+
+    /* ── Hero logo ────────────────────────────────────────────── */
+    .hero-logo {
+      width: 130px;
+      height: 130px;
+      object-fit: contain;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    @media (max-width: 620px) {
+      .hero-logo { width: 90px; height: 90px; }
+      .nav-logo-img { height: 36px; }
+    }
   </style>
 </head>
 <body>
@@ -792,7 +817,10 @@
        NAVBAR
   ═══════════════════════════════════════════════════════ -->
   <nav class="navbar">
-    <div class="nav-logo">Saamo<span> Cafe</span></div>
+    <a href="#home" class="nav-logo">
+      <img src="images/logo.jpeg" alt="Saamo Cafe" class="nav-logo-img">
+      <span class="nav-logo-text">Saamo<span> Cafe</span></span>
+    </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about"   onclick="closeNav()">About</a></li>
       <li><a href="#menu"    onclick="closeNav()">Menu</a></li>
@@ -809,7 +837,7 @@
        HERO
   ═══════════════════════════════════════════════════════ -->
   <section class="hero" id="home">
-    <p class="hero-ornament">✦ &nbsp;&nbsp; ✦ &nbsp;&nbsp; ✦</p>
+    <img src="images/logo.jpeg" alt="Saamo Cafe logo" class="hero-logo">
     <h1>Saamo</h1>
     <p class="hero-cafe">C a f e</p>
     <div class="hero-rule"><div class="hero-rule-diamond"></div></div>
