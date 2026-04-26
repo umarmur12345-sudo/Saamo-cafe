@@ -120,6 +120,17 @@
     }
     .nav-order:hover { background: var(--maroon-hover); }
 
+    .nav-mobile-actions {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: .75rem;
+      padding-top: .5rem;
+      border-top: 1px solid var(--maroon-dim);
+      margin-top: .25rem;
+    }
+
     .nav-toggle {
       display: none;
       flex-direction: column;
@@ -742,6 +753,7 @@
       .nav-links.open { display: flex; }
       .nav-toggle { display: flex; }
       .nav-actions { display: none; }
+      .nav-mobile-actions { display: flex; }
 
       .about-features { grid-template-columns: 1fr; }
 
@@ -888,6 +900,16 @@
       <li><a href="#gallery" onclick="closeNav()">Gallery</a></li>
       <li><a href="#reviews" onclick="closeNav()">Reviews</a></li>
       <li><a href="#contact" onclick="closeNav()">Contact</a></li>
+      <li class="nav-mobile-actions">
+        <a href="https://www.facebook.com/p/Saamo-Cafe-61581850951304/" target="_blank" rel="noopener" class="nav-social" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/saamo.cafe/" target="_blank" rel="noopener" class="nav-social" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.grubhub.com/restaurant/saamo-cafe-2568-86th-street-brooklyn/14181408" target="_blank" rel="noopener" class="nav-order">Grubhub</a>
+        <a href="https://www.doordash.com/store/saamo-cafe-brooklyn-39845651/92394958/" target="_blank" rel="noopener" class="nav-order">DoorDash</a>
+      </li>
     </ul>
     <div class="nav-actions">
       <a href="https://www.facebook.com/p/Saamo-Cafe-61581850951304/" target="_blank" rel="noopener" class="nav-social" aria-label="Facebook">
